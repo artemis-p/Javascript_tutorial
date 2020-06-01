@@ -29,6 +29,8 @@
  
 var year, yearJohn, yearMark;
 year = 2020;
+ageJohn = 28;
+ageMark = 30;
 
 // Math operators
 yearJohn = year - 28;
@@ -37,3 +39,13 @@ yearMark = year - 33;
 console.log(yearJohn);
 console.log(year * 2);
 console.log(year/10);
+
+// Logical operators
+var johnOlder = ageJohn > ageMark;
+console.log(johnOlder);
+
+// typeof operator
+console.log(typeof johnOlder);
+console.log(typeof ageJohn);
+var x;
+console.log(typeof x);
