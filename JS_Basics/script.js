@@ -52,32 +52,37 @@
 
 
 
-/**********************
- * Operator precedence
+// /**********************
+//  * Operator precedence
+//  */
+
+// var now = 2020;
+// var yearJohn = 1989;
+// var fullAge = 18;
+
+// //Multiple operators
+// var isFullAge = now - yearJohn >= fullAge; // true
+// console.log(isFullAge);
+
+// // Grouping
+// var ageJohn = now - yearJohn;
+// var ageMark = 35;
+// var average = (ageJohn + ageMark) / 2;
+// console.log(average);
+
+// // Multiple assignments
+// var x,y;
+// x = (3 + 5) * 4 - 6;//8 * 4 // 32 - 6// 26
+// console.log(x);
+
+// // More operators
+// x = x + 2;
+// x += 2;
+// console.log(x);
+
+// x++; // x = x + 1
+
+
+/****************
+ * Coding challenge 1
  */
-
-var now = 2020;
-var yearJohn = 1989;
-var fullAge = 18;
-
-//Multiple operators
-var isFullAge = now - yearJohn >= fullAge; // true
-console.log(isFullAge);
-
-// Grouping
-var ageJohn = now - yearJohn;
-var ageMark = 35;
-var average = (ageJohn + ageMark) / 2;
-console.log(average);
-
-// Multiple assignments
-var x,y;
-x = (3 + 5) * 4 - 6;//8 * 4 // 32 - 6// 26
-console.log(x);
-
-// More operators
-x = x + 2;
-x += 2;
-console.log(x);
-
-x++; // x = x + 1
