@@ -130,47 +130,82 @@
  */
 
  //ternary operator
- var firstName = "John";
- var age = 16;
- age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + " drinks juice");
+//  var firstName = "John";
+//  var age = 16;
+//  age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + " drinks juice");
 
- var drink = age >= 18 ? 'beer' : "juice";
- console.log("What drink does " + firstName + " drink? " + drink + " !");
+//  var drink = age >= 18 ? 'beer' : "juice";
+//  console.log("What drink does " + firstName + " drink? " + drink + " !");
 
-//  if (age >= 18) {
-//    var drink = "beer";
+// //  if (age >= 18) {
+// //    var drink = "beer";
+// //  } else {
+// //    var drink = "juice";
+// //  }
+
+// // switch statement
+// var job = "teacher";
+// switch(job) {
+//   case 'teacher':
+//   case "instructor":
+//     console.log(firstName + ' teaches kids how to code.');
+//     break;
+//   case 'driver':
+//     console.log(firstName + ' drives an Uber in Lisbon.')
+//     break;
+//   default:
+//     console.log(firstName + ' does sth else.');
+//     break;
+// }
+
+
+// var firstName = "John";
+// var age = 16;
+
+// switch(true) {
+//   case age < 13:
+//     console.log(firstName + " is a boy");
+//     break;
+//   case age >= 13 && age < 20:
+//     console.log(firstName + " is a teenager");
+//     break;
+//   default:
+//     console.log(firstName + " is a man");
+//     break;
+// }
+
+
+
+/*********************
+ * Truthy and falsy values and equality operators
+ */
+
+ // falsy values: undefined, null, 0, "", NaN
+ // truthy values: all values that are not falsy
+
+//  var height;
+//  if (height) {
+//    console.log("Variable has been defined");
 //  } else {
-//    var drink = "juice";
-//  }
+//    console.log("Variable has not been defined");
+//  } // undefined
 
-// switch statement
-var job = "teacher";
-switch(job) {
-  case 'teacher':
-  case "instructor":
-    console.log(firstName + ' teaches kids how to code.');
-    break;
-  case 'driver':
-    console.log(firstName + ' drives an Uber in Lisbon.')
-    break;
-  default:
-    console.log(firstName + ' does sth else.');
-    break;
-}
+//  var height;
+//  height = 23;
 
+//  if (height || height === 2) {
+//    console.log("Variable has been defined");
+//  } else {
+//    console.log("Variable has not been defined");
+//  } // defined
 
-var firstName = "John";
-var age = 16;
+//  // Equality operators
+//  if (height == "23") {
+//    console.log('The == operator does type coercion');
+//  } // it means that since there is no strict equality, JS is converting the number into a string and accepts it as truth
 
-switch(true) {
-  case age < 13:
-    console.log(firstName + " is a boy");
-    break;
-  case age >= 13 && age < 20:
-    console.log(firstName + " is a teenager");
-    break;
-  default:
-    console.log(firstName + " is a man");
-    break;
-}
-
+//  if (height === "23") {
+//   console.log('The == operator does type coercion');
+// } else {
+//   console.log("There is a strict equal")
+// }
