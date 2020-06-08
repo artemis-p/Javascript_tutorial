@@ -209,3 +209,28 @@
 // } else {
 //   console.log("There is a strict equal")
 // }
+
+ /*****************
+  * Functions
+  */
+
+  function calculateAge(birthYear) {
+    return 2020 - birthYear;
+  }
+
+  var ageJohn = calculateAge(1976);
+  var ageJane = calculateAge(1988);
+  var ageMark = calculateAge(1980);
+  console.log(ageJohn, ageJane, ageMark);
+
+  function yearsUntilRetirement(year, firstName) {
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+
+    if (retirement > 0) {
+      console.log(firstName + ' retires in ' + retirement + ' years.');
+    } else {
+      console.log(firstName + ' is already retired.');
+    }
+  }
+  yearsUntilRetirement(1948, 'John')
