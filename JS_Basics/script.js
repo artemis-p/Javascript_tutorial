@@ -214,23 +214,51 @@
   * Functions
   */
 
-  function calculateAge(birthYear) {
-    return 2020 - birthYear;
-  }
+  // function calculateAge(birthYear) {
+  //   return 2020 - birthYear;
+  // }
 
-  var ageJohn = calculateAge(1976);
-  var ageJane = calculateAge(1988);
-  var ageMark = calculateAge(1980);
-  console.log(ageJohn, ageJane, ageMark);
+  // var ageJohn = calculateAge(1976);
+  // var ageJane = calculateAge(1988);
+  // var ageMark = calculateAge(1980);
+  // console.log(ageJohn, ageJane, ageMark);
 
-  function yearsUntilRetirement(year, firstName) {
-    var age = calculateAge(year);
-    var retirement = 65 - age;
+  // function yearsUntilRetirement(year, firstName) {
+  //   var age = calculateAge(year);
+  //   var retirement = 65 - age;
 
-    if (retirement > 0) {
-      console.log(firstName + ' retires in ' + retirement + ' years.');
-    } else {
-      console.log(firstName + ' is already retired.');
-    }
-  }
-  yearsUntilRetirement(1948, 'John')
+  //   if (retirement > 0) {
+  //     console.log(firstName + ' retires in ' + retirement + ' years.');
+  //   } else {
+  //     console.log(firstName + ' is already retired.');
+  //   }
+  // }
+  // yearsUntilRetirement(1948, 'John')
+
+
+
+  /*****************
+  * Function statements and expressions
+  */
+
+// Function declaration
+// function whatDoYouDo(job, firstName) {}
+
+  //function expression = pieces of code that always produce a value ( 2+3 = 5 produces a result so it's an expression)
+  // statements = they perform actions but they do not produce immediate result, eg if statement, functions
+  // var whatDoYouDo = function(job, firstName) {
+  //   switch(job) {
+  //     case 'teacher':
+  //       return firstName + ' teaches kids how to code';
+  //     case 'driver':
+  //       return firstName + ' drives kids to school.';
+  //     case 'designer':
+  //       return firstName + ' designs beautiful websites.';
+  //     default:
+  //       return firstName + ' does something else.';
+
+  //   }
+  // }
+  // console.log(whatDoYouDo('teacher', 'John'));
+  // console.log(whatDoYouDo('designer', 'Helen'));
+  // console.log(whatDoYouDo('retired', 'Mark'));
