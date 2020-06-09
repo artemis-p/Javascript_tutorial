@@ -303,28 +303,55 @@
  */
  // objects = key/value pairs
 //Object literal
- var john = {
-  firstName: 'John', //firstname is a property of the john object and we read it by adding the . notation
-  lastName: 'Smith',
-  birthYear: 1990,
-  family: ['Jane', 'Mark', 'Bob', 'Emily'],
-  job: 'teacher',
-  isMarried: false
- };
- // ways of retrieving data from an object
- console.log(john.firstName);
- console.log(john['family']);
- var x = 'birthYear';
- console.log(john[x]);
+//  var john = {
+//   firstName: 'John', //firstname is a property of the john object and we read it by adding the . notation
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false
+//  };
+//  // ways of retrieving data from an object
+//  console.log(john.firstName);
+//  console.log(john['family']);
+//  var x = 'birthYear';
+//  console.log(john[x]);
 
- //mutate properties of the object
- john.job = 'driver';
- john['isMarried'] = true;
- console.log(john);
+//  //mutate properties of the object
+//  john.job = 'driver';
+//  john['isMarried'] = true;
+//  console.log(john);
 
- //ways of creating a new object
- var jane = new Object();
- jane.name = 'Jane';
- jane. birthYear = 1969;
- jane['lastName'] = 'Peters';
- console.log(jane);
+//  //ways of creating a new object
+//  var jane = new Object();
+//  jane.name = 'Jane';
+//  jane. birthYear = 1969;
+//  jane['lastName'] = 'Peters';
+//  console.log(jane);
+
+/****************
+ * Objects and methods
+ */
+
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1992,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calcAge: function() {
+//       this.age = 2018 - this.birthYear; //this => this current object
+//     }
+//   };
+
+// // console.log(john.calcAge());
+
+// // var age = john.calcAge();
+// // john.age = age;
+ 
+// // or 
+// //john.age = john.calcAge()
+
+// john.calcAge();
+// console.log(john);
