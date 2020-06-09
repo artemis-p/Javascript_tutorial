@@ -355,3 +355,4 @@
 
 // john.calcAge();
 // console.log(john);
+
