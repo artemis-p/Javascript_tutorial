@@ -356,3 +356,50 @@
 // john.calcAge();
 // console.log(john);
 
+/****************
+ * Loops and iterations
+ */
+
+ //for loop
+ //for (initial value of a counter; condition that is evaluated before the loop iteration to check if the next loop should still be executed; counter update)
+
+//  for (var i = 0; i < 10; i++) {
+//    console.log(i);
+//  }
+//  // i = 0,0< 10 true, log i to console, i++
+//  //i = 1, 1 < 10 true, log i to console, i++, etc.
+
+//  for (var i = 0; i < 20; i+= 2) {
+//   console.log(i);
+// }
+
+// var john = ['John', 'Smith', 1990, 'designer', false];
+// for (var i = 0; i < john.length; i++) {
+//   console.log(john[i]);
+// }
+
+//while loop
+// var i = 0;
+// while(i < john.length) {
+//   console.log(john[i]);
+//   i++;
+// }
+
+
+//continue and break statements
+var john = ['John', 'Smith', 1990, 'designer', false];
+// for (var i = 0; i < john.length; i++) {
+//   if (typeof john[i] !== 'string') continue;
+//   console.log(john[i]);
+// }
+
+// for (var i = 0; i < john.length; i++) {
+//   if (typeof john[i] !== 'string') break;
+//   console.log(john[i]);
+// }
+
+
+// looping backwards
+for (var i = john.length - 1; i>= 0; i--) {
+  console.log(john[i]);
+}
