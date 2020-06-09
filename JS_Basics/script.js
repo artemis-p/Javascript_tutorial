@@ -270,28 +270,61 @@
   * Arrays
   */
 
-  var names = ['John', 'Diane', 'Jane'];
-  var years = new Array(1980, 1969, 1948);
+//   var names = ['John', 'Diane', 'Jane'];
+//   var years = new Array(1980, 1969, 1948);
 
-  console.log(names[2]);
-  console.log(names.length);
+//   console.log(names[2]);
+//   console.log(names.length);
 
-  //mutate the data in the array
-  names[1] = 'Ben';
-  names[5] = 'Mary';
-  names[names.length] = 'Vicky'; // it adds the new string at the last position of the array
-  console.log(names);
+//   //mutate the data in the array
+//   names[1] = 'Ben';
+//   names[5] = 'Mary';
+//   names[names.length] = 'Vicky'; // it adds the new string at the last position of the array
+//   console.log(names);
 
-  // Different data types
-var john = ['John', 'Smith', 1980, 'Teacher', false];
- john.push('blue'); // add elements at the end the array
- john.unshift('Mr'); // add elements in the beginning of the array
- john.pop(); // removes the last element at the end of the array
- john.shift(); // removes the first element from the beginning of the array
+//   // Different data types
+// var john = ['John', 'Smith', 1980, 'Teacher', false];
+//  john.push('blue'); // add elements at the end the array
+//  john.unshift('Mr'); // add elements in the beginning of the array
+//  john.pop(); // removes the last element at the end of the array
+//  john.shift(); // removes the first element from the beginning of the array
+//  console.log(john);
+
+
+//  console.log(john.indexOf(1980));
+
+//  var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+//  console.log(isDesigner);
+
+
+
+/****************
+ * Objects and properties
+ */
+ // objects = key/value pairs
+//Object literal
+ var john = {
+  firstName: 'John', //firstname is a property of the john object and we read it by adding the . notation
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false
+ };
+ // ways of retrieving data from an object
+ console.log(john.firstName);
+ console.log(john['family']);
+ var x = 'birthYear';
+ console.log(john[x]);
+
+ //mutate properties of the object
+ john.job = 'driver';
+ john['isMarried'] = true;
  console.log(john);
 
-
- console.log(john.indexOf(1980));
-
- var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
- console.log(isDesigner);
+ //ways of creating a new object
+ var jane = new Object();
+ jane.name = 'Jane';
+ jane. birthYear = 1969;
+ jane['lastName'] = 'Peters';
+ console.log(jane);
