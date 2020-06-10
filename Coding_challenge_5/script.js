@@ -33,11 +33,11 @@ var john = {
       var bill = this.bills[i];
 
       if (bill < 50) {
-        percentage = 0.2;
+          percentage = 0.2;
       } else if (bill >= 50 && bill <=200) {
-        percentage = 0.15;
+          percentage = 0.15;
       } else {
-        percentage = 0.1;
+          percentage = 0.1;
       }
 
       //Add results to the corresponding arrays
@@ -60,11 +60,11 @@ var mark = {
       var bill = this.bills[i];
 
       if (bill < 100) {
-        percentage = 0.2;
+          percentage = 0.2;
       } else if (bill >= 100 && bill <=300) {
-        percentage = 0.1;
+          percentage = 0.1;
       } else {
-        percentage = 0.25;
+          percentage = 0.25;
       }
 
       //Add results to the corresponding arrays
@@ -96,4 +96,3 @@ if (john.average > mark.average) {
 } else {
   console.log(mark.name + "'s family paid on average " + mark.average + " tips.")
 }
-// 8. Log to the console which family paid the highest tips on average
