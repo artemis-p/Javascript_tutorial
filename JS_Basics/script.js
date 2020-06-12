@@ -403,3 +403,10 @@
 // for (var i = john.length - 1; i>= 0; i--) {
 //   console.log(john[i]);
 // }
+
+
+var x = 1;
+if (x === 1) {
+  var x = 2;
+}
+console.log(x); // Correct answer is 2. If the condition is true then the code in the block will be executed and x will be 2! yay!
