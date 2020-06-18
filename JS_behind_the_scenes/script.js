@@ -59,26 +59,61 @@
 // Example to show the differece between execution stack and scope chain
 
 
-var a = 'Hello!';
-first();
+// var a = 'Hello!';
+// first();
 
-function first() {
-    var b = 'Hi!';
-    second();
+// function first() {
+//     var b = 'Hi!';
+//     second();
 
-    function second() {
-        var c = 'Hey!';
-        third()
-    }
-}
-function third() {
-    var d = 'John';
-    console.log(a + d);
-}
+//     function second() {
+//         var c = 'Hey!';
+//         third()
+//     }
+// }
+// function third() {
+//     var d = 'John';
+//     console.log(a + d);
+// }
 // var a, function first and function third are in the global scope
 // function secton is in a local scope of function first
 
 
 
 ///////////////////////////////////////
-// Lecture: The this keyword
+// Lecture: The this keyword => at a regular function the this keyword simply points at the global project, which in case of the browser is the window object. In a method call (function attached to an object), the this variable points to the object that is calling the method.
+
+//console.log(this); // returns the Window object, as this is the default object 
+// calculateAge(1985);
+
+// function calculateAge(year) {
+//   console.log(2016 - year);
+//   console.log(this); // logs "window" because this is not a method but a regular function call
+// }
+
+
+var john = { // object
+  name: "John",
+  yearOfBirth: 1990,
+  calculateAge: function() { // method
+    console.log(this); // returns the Object, as this keyword refers to the object that called the method
+    console.log(2016 - this.yearOfBirth); 
+
+    // function innerFunction() {
+    //   console.log(this); // returns Window, because even though it's within a method, it's still a regular function call so the object is Window
+    // }
+    // innerFunction();
+  }
+}
+
+john.calculateAge(); //calling the method
+
+var mike = {
+  name: 'Mike',
+  yearOfBirth: 1984
+};
+
+mike.calculateAge = john.calculateAge; // method borrowing => using john's method to work on Mike. We don't have the parenthesis next to this methods, because we are now longer using it as a method but it's instead a variable
+mike.calculateAge(); // calling the function and the object will be mike
+
+// the this variable is only assigned a value when the object calls the method
