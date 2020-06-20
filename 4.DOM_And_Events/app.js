@@ -28,3 +28,5 @@ document.querySelector('#current-' + activePlayer).textContent = dice; // setter
 // console.log(x);
 
 document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
+
+document.querySelector(".btn-roll").addEventListener('click', )
