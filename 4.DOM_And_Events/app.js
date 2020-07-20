@@ -14,9 +14,7 @@ scores = [0,0]; // to keep track of scores for both players
 roundScore = 0; // one round score at a time
 activePlayer = 0; // to keep track of the player playing every time
 
-dice = Math.floor(Math.random() * 6) + 1; // this will give a number between 0-5 that's why we need to add 1 at the end
-
-document.querySelector('#current-' + activePlayer).textContent = dice; // setter, cause we set a value // document => the object that will give us access to the DOM, querySelector => a method to select elements from the DOM, textContent => we use it when we want ti change the text of an element 
+document.querySelector("#current-" + activePlayer).textContent = dice; // setter, cause we set a value // document => the object that will give us access to the DOM, querySelector => a method to select elements from the DOM, textContent => we use it when we want ti change the text of an element 
 // ('#current-' + activePlayer) => because of type coersion JS will convert all this into current 0, if activePLayer is === 0, if this was 1 then JS would convert it to 1 
 //textContent => can set plain text, but no HTML
 // innerHTML =>changes the selection text bit adds some HTML in there, too
@@ -29,4 +27,29 @@ document.querySelector('#current-' + activePlayer).textContent = dice; // setter
 
 document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
 
-document.querySelector(".btn-roll").addEventListener('click', )
+
+
+document.getElementById('score-0').textContent = '0';
+document.getElementById('current-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+document.getElementById('current-1').textContent = '0';
+
+
+// function btn() {
+
+// }
+// btn();
+
+//callback function: a function that another function will call it for us => EventTarget. the addEventListener will call the btn function for us, so we don't need to add the empty brackets, next to the "click"
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  // 1. Random number
+  var dice = Math.floor(Math.random() * 6) + 1; // this will give a number between 0-5 that's why we need to add 1 at the end // due to the scoping chain we won't have any access in this variable outside of this function
+
+  // 2. Display the result
+  var diceDOM = document.querySelector('.dice');
+  diceDOM.style.display = 'block';
+  diceDOM.src = 'dice-' + dice + '.png';
+
+  // 3. Update the round score if the rolled number was not a 1
+});
+
