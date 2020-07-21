@@ -39,3 +39,13 @@ const capitalize = (first_name, last_name) => {
 }
 capitalize("maria", "loyds");
 
+// DOM Interaction
+// Selecting the h1 element from page 
+console.log(document.querySelector("h1"));
+
+// Listeners
+document.addEventListener('click', function() {
+  console.log("I clicked!");
+});
+
+
