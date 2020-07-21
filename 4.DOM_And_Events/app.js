@@ -9,10 +9,7 @@ GAME RULES:
 
 var scores, roundScore, activePlayer, dice;
 
-
-scores = [0,0]; // to keep track of scores for both players
-roundScore = 0; // one round score at a time
-activePlayer = 0; // to keep track of the player playing every time
+init();
 
 document.querySelector("#current-" + activePlayer).textContent = dice; // setter, cause we set a value // document => the object that will give us access to the DOM, querySelector => a method to select elements from the DOM, textContent => we use it when we want ti change the text of an element 
 // ('#current-' + activePlayer) => because of type coersion JS will convert all this into current 0, if activePLayer is === 0, if this was 1 then JS would convert it to 1 
@@ -24,16 +21,6 @@ document.querySelector("#current-" + activePlayer).textContent = dice; // setter
 
 // var x = document.querySelector('#score-0').textContent; // getter, cause we get a value. we want to just read it and store it to a variable
 // console.log(x);
-
-document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
-
-
-
-document.getElementById('score-0').textContent = '0';
-document.getElementById('current-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-document.getElementById('current-1').textContent = '0';
-
 
 // function btn() {
 
@@ -96,3 +83,20 @@ function nextPlayer() {
 
   document.querySelector('.dice').style.display = 'none';
 };
+
+document.querySelector('btn-new').addEventListener('click', init);
+
+function init() {
+  scores = [0,0]; // to keep track of scores for both players
+  roundScore = 0; // one round score at a time
+  activePlayer = 0; // to keep track of the player playing every time
+
+  document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
+
+  document.getElementById('score-0').textContent = '0';
+  document.getElementById('current-0').textContent = '0';
+  document.getElementById('score-1').textContent = '0';
+  document.getElementById('current-1').textContent = '0';
+  document.getElementById('name-0').textContent = 'Player 1';
+  document.getElementById('name-1').textContent = 'Player 2';
+}
