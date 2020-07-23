@@ -29,43 +29,50 @@ init();
 
 //callback function: a function that another function will call it for us => EventTarget. the addEventListener will call the btn function for us, so we don't need to add the empty brackets, next to the "click"
 
+
+//ading state for when we are clicking the button roll and want to check if we are playing
 document.querySelector('.btn-roll').addEventListener('click', function() {
-  // 1. Random number
-  var dice = Math.floor(Math.random() * 6) + 1; // this will give a number between 0-5 that's why we need to add 1 at the end // due to the scoping chain we won't have any access in this variable outside of this function
+  if(gamePlaying) {
+      // 1. Random number
+      var dice = Math.floor(Math.random() * 6) + 1; // this will give a number between 0-5 that's why we need to add 1 at the end // due to the scoping chain we won't have any access in this variable outside of this function
 
-  // 2. Display the result
-  var diceDOM = document.querySelector('.dice');
-  diceDOM.style.display = 'block';
-  diceDOM.src = 'dice-' + dice + '.png';
+      // 2. Display the result
+      var diceDOM = document.querySelector('.dice');
+      diceDOM.style.display = 'block';
+      diceDOM.src = 'dice-' + dice + '.png';
 
-  // 3. Update the round score if the rolled number was not a 1
-  if (dice !== 1) {
-    // Add score
-    roundScore += dice;
-    document.querySelector('#current-' + activePlayer).textContent = roundScore;
-  } else {
-    // Next player
-    nextPlayer();
+      // 3. Update the round score if the rolled number was not a 1
+      if (dice !== 1) {
+        // Add score
+        roundScore += dice;
+        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+      } else {
+        // Next player
+        nextPlayer();
+      }
   }
 });
 
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
-  // 1. Add current score to GLOBAL score
-  scores[activePlayer] += roundScore;
+  if(gamePlaying) {
+    // 1. Add current score to GLOBAL score
+    scores[activePlayer] += roundScore;
 
-  // 2. Update the UI
-  document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+    // 2. Update the UI
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-  // 3. Check if player won the game 
-  if (scores[activePlayer] >= 20) {
-    document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
-    document.querySelector('.dice').style.display = 'none';
-    document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-    document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-  } else {
-    // 4. Next Player
-    nextPlayer();
+    // 3. Check if player won the game 
+    if (scores[activePlayer] >= 100) {
+      document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+      document.querySelector('.dice').style.display = 'none';
+      document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+      document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+      gamePlaying = false;
+    } else {
+      // 4. Next Player
+      nextPlayer();
+    }
   }
 });
 
@@ -83,7 +90,7 @@ function nextPlayer() {
   document.querySelector('.player-1-panel').classList.toggle('active');
 
   document.querySelector('.dice').style.display = 'none';
-};
+}
 
 document.querySelector('.btn-new').addEventListener('click', init);
 
@@ -91,6 +98,7 @@ function init() {
   scores = [0, 0]; // to keep track of scores for both players
   roundScore = 0; // one round score at a time
   activePlayer = 0; // to keep track of the player playing every time
+  gamePlaying = true;
 
   document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
 
