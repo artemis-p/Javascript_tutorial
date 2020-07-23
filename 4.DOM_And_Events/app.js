@@ -84,19 +84,24 @@ function nextPlayer() {
   document.querySelector('.dice').style.display = 'none';
 };
 
-document.querySelector('btn-new').addEventListener('click', init);
+document.querySelector('.btn-new').addEventListener('click', init);
 
 function init() {
-  scores = [0,0]; // to keep track of scores for both players
+  scores = [0, 0]; // to keep track of scores for both players
   roundScore = 0; // one round score at a time
   activePlayer = 0; // to keep track of the player playing every time
 
   document.querySelector('.dice').style.display = 'none'; // we make the dice disappear. we use the element id with the style method to change the css and then the display method and set it equal to none.
 
   document.getElementById('score-0').textContent = '0';
-  document.getElementById('current-0').textContent = '0';
   document.getElementById('score-1').textContent = '0';
+  document.getElementById('current-0').textContent = '0';
   document.getElementById('current-1').textContent = '0';
   document.getElementById('name-0').textContent = 'Player 1';
   document.getElementById('name-1').textContent = 'Player 2';
+  document.querySelector('.player-0-panel').classList.remove('winner');
+  document.querySelector('.player-1-panel').classList.remove('winner');
+  document.querySelector('.player-0-panel').classList.remove('active');
+  document.querySelector('.player-1-panel').classList.remove('active');
+  document.querySelector('.player-0-panel').classList.add('active');
 }
