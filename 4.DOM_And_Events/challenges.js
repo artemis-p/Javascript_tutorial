@@ -52,9 +52,17 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     // 2. Update the UI
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     var input = document.querySelector('.final-score').value;
+    var winningScore;
     
+    // We want to check what happens in case the final score is empty. All values of undefined, 0, null or "" are COERCED to false. Anything else is COERCED to true
+    if(input) {
+      winningScore = input;
+    } else {
+      winningScore = 100;
+    }
+
     // 3. Check if player won the game 
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= winningScore) {
       document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
       document.querySelector('.dice').style.display = 'none';
       document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
