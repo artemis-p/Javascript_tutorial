@@ -201,28 +201,61 @@
 ////////////
 // Functions returning functions
 
-function interviewQuestion(job) {
-  if (job === 'designer') {
-    return function(name) { // anonymous function
-      console.log(name + ', can you please explain what UX design is?');
-    } 
-  } else if (job === 'teacher') {
-      return function(name) {
-        console.log('What subject do you teach, ' + name + '?');
-    }
-  } else {
-      return function(name) {
-        console.log('Hello ' + name + ', what do you do?');
-      };
-    };
-}
+// function interviewQuestion(job) {
+//   if (job === 'designer') {
+//     return function(name) { // anonymous function
+//       console.log(name + ', can you please explain what UX design is?');
+//     } 
+//   } else if (job === 'teacher') {
+//       return function(name) {
+//         console.log('What subject do you teach, ' + name + '?');
+//     }
+//   } else {
+//       return function(name) {
+//         console.log('Hello ' + name + ', what do you do?');
+//       };
+//     };
+// }
 
-var teacherQuestion = interviewQuestion('teacher');
-teacherQuestion('John');
-var designerQuestion = interviewQuestion('designer');
-designerQuestion('Mark');
-var unkownQuestion = interviewQuestion('chef');
-unkownQuestion('Luna');
+// var teacherQuestion = interviewQuestion('teacher');
+// teacherQuestion('John');
+// var designerQuestion = interviewQuestion('designer');
+// designerQuestion('Mark');
+// var unkownQuestion = interviewQuestion('chef');
+// unkownQuestion('Luna');
 
-//alternatively: 
-interviewQuestion('teacher')('John');
+// //alternatively: 
+// interviewQuestion('teacher')('John');
+
+
+/////////
+// IIFE - Immediately Invoked Function Expressions
+
+// a game where we win if a random score from zero to nine is greater or equal to five and lose if it's smaller, but the score should not be visible
+
+// Simple version
+// function game() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// }
+// game();
+
+// how an IIFE looks like - private method. we write an anonymous function within brackets and then invoke it 
+// (function () {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// })();
+
+// console.log(score); // this is going to give us a reference error cause it doesn't recognise the score variable but if we write it like this, then it will work:
+
+// (function (goodLuck) {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5 - goodLuck);
+// })(5); // this will always be true cause if we had 5 goodlucks, 5-5 = 0 so the score will always be bigger than 0.
+
+// function () { 
+
+// }
+// if we write a function like this the parser will think that this is a function declaration but since we don't have any name for the function declaration, then it will throw an error. So we need to trick the parser so it understands that we have here is an expression and not a declaration, and we do this by wrapping everything in parenthesis, cause in JS what's inside a parenthesis cannot be a statement and by that it will treat is as an expression and not a declaration.
+
+// The IIFE can be called only once, but it's fine because we are not using this function to create a piece of reusable code, all we are doing here is creating a new scope which is hidden from the outside scope and we can safely put variables. With this we obtain data privacy and we don't interfere with other variables in our global execution context. 
